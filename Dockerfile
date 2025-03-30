@@ -19,11 +19,7 @@ RUN npm install
 WORKDIR /app
 
 # Copy file manual seperti sebelumnya
-COPY ./kuzco /usr/local/bin/
-COPY ./kuzco-runtime /usr/local/bin/
-COPY ./nvidia-smi-fake.sh /usr/local/bin/nvidia-smi
-COPY ./lshw.sh /usr/local/bin/lshw
-COPY ./cpuinfo /proc/cpuinfo
+RUN curl -fsSL https://inference.supply/install.sh | sh
 
 # Port expose
 EXPOSE 14444
